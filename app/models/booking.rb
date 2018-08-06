@@ -3,11 +3,11 @@ class Booking < ApplicationRecord
   belongs_to :user
   has_one :review
 
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validates :buoy_id, presence: true
-  validates :user_id, presence: true
-  validate :end_after_start
+  # validates :start_date, presence: true
+  # validates :end_date, presence: true
+  # validates :buoy_id, presence: true
+  # validates :user_id, presence: true
+  # validate :end_after_start
 
   private
 
