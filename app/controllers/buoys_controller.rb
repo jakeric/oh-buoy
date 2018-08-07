@@ -9,6 +9,7 @@ class BuoysController < ApplicationController
   end
 
   def new
+    @array = ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"]
     @buoy = Buoy.new
   end
 
@@ -24,6 +25,7 @@ class BuoysController < ApplicationController
   end
 
   def edit
+    @array = ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"]
   end
 
   def update
