@@ -3,11 +3,11 @@ class Buoy < ApplicationRecord
   has_many :reviews, through: :bookings
   has_many :photos
 
-  # validates :title, presence: true
-  # validates :age, presence: true
-  # validates :category, inclusion: { in: ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"] }
-  # validates :capacity, presence: true
-  # validates :price_per_day, numericality: true, presence: true
+  validates :title, presence: true
+  validates :age, presence: true
+  validates :category, inclusion: { in: ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"] }
+  validates :capacity, presence: true
+  validates :price_per_day, numericality: true, presence: true
   # validates :street
   # validates :number
   # validates :city
@@ -18,4 +18,4 @@ class Buoy < ApplicationRecord
 end
 
 # Test
-# Buoy.new(title: "Test title", age: 19, category: "Food", capacity: 3, price_per_day: 10.1, street: "test", number: 8, city: "berlin", postal_code: "2342", country: "GER", latitude: "test", longitude: "test2123")
+# Buoy.new(title: "Test title", age: 19, category: "Food", capacity: 3, price_per_day: 10.1)
