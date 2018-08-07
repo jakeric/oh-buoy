@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :buoys
   has_many :bookings
-  has_many :reviews, through: :bookings
+  has_many :reviews
   has_many :photos
 
   validates :first_name, presence: true
