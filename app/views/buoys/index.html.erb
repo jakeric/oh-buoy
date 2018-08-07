@@ -2,8 +2,12 @@
 
 <% @buoys.each do |buoy| %>
 <ul>
-  <li>buoy.title</li>
-  <li>buoy.description</li>
-  <li>buoy.price_per_day</li>
+  <li><%= buoy.title %></li>
+  <li><%= buoy.description %></li>
+  <li><%= buoy.price_per_day %></li>
 </ul>
+<%= link_to 'see details',buoy_path(buoy) %>
 <% end %>
+
+<br>
+<%= link_to 'Add a listing',new_buoy_path %>

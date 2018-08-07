@@ -1,1 +1,10 @@
 <h1>Buoys#Show</h1>
+<br>
+<p><%= @buoy.user.first_name %> <%= @buoy.user.last_name %></p>
+<h3><%= @buoy.title %></h3>
+<p><%= @buoy.description %></p>
+<h2><%= @buoy.price_per_day %>€</h2>
+<%= link_to 'edit',edit_buoy_path(@buoy) %>
+<%= link_to 'delete',buoy_path(@buoy), method: 'delete' %>
+<br>
+<%= link_to 'Back to list',buoys_path %>

@@ -1,1 +1,12 @@
 <h1>Buoys#Edit</h1>
+
+<h3><%= @buoy.title %></h3>
+
+<%= simple_form_for @buoy do |f| %>
+  <%= f.input :title, label: 'Title' %>
+  <%= f.input :description, label: 'Description' %>
+  <%= f.input :age, label: 'Age' %>
+  <%= f.input :capacity, label: 'capacity' %>
+  <%= f.input :price_per_day, label: 'Price per day in €€€' %>
+  <%= f.button :submit %>
+<% end %>
