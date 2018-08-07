@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  belongs_to :booking
+  has_one :booking
   belongs_to :user
 
   # validates :description, presence: true
