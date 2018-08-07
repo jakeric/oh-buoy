@@ -3,10 +3,10 @@
     <div class="col-md-8 col-md-offset-2">
       <h1>Create a new Booking</h1>
 
-      <%= simple_form_for [buoy, booking] do |f| %>
+      <%= simple_form_for [@buoy, @booking] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
-        <%= f.button :book, class: 'btn btn-primary' %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
