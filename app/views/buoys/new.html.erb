@@ -1,6 +1,7 @@
 <h1>Buoys#New</h1>
 
 <%= simple_form_for @buoy do |f| %>
+  <%= f.select :category, @array, label: 'Category'%>
   <%= f.input :title, label: 'Title' %>
   <%= f.input :description, label: 'Description' %>
   <%= f.input :age, label: 'Age' %>
