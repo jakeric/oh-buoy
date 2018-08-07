@@ -5,7 +5,7 @@ class Buoy < ApplicationRecord
 
   validates :title, presence: true
   validates :age, presence: true
-  validates :category, inclusion: { in: ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"] }
+  # validates :category, inclusion: { in: ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"] }
   validates :capacity, presence: true
   validates :price_per_day, numericality: true, presence: true
   # validates :street
