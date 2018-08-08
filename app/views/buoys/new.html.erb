@@ -32,11 +32,10 @@
             <div class="col-md-12">
               <div class="photo-input">
                 <%= f.input :photo %>
-                <button class="btn btn-success">upload a photo</button>
+                <%= f.input :photo_cache, as: :hidden %>
+                <!-- <button class="btn btn-success">upload a photo</button> -->
               </div>
             </div>
-
-            <%= f.input :photo_cache, as: :hidden %>
 
             <div class="col-md-12">
               <%= f.button :submit %>
