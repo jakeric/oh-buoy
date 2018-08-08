@@ -10,4 +10,5 @@ class Buoy < ApplicationRecord
   validates :capacity, presence: true
   validates :price_per_day, numericality: true, presence: true
   validates :photo, presence:true
+
 end
