@@ -8,6 +8,10 @@
 
 puts "creating 20 buoys"
 
+Buoy.destroy_all
+
+puts "just deleted the old seed"
+
 20.times do
   buoy = Buoy.new(
      title: Faker::FunnyName.name,
