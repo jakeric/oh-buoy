@@ -19,11 +19,11 @@ class BuoysController < ApplicationController
 
   def create
     @buoy = Buoy.new(buoy_params)
-    @buoy.user_id = current_user
+    @buoy.user = current_user
     if @buoy.save
       redirect_to buoys_path
     else
-      render :new
+      redirect_to new_buoy_path
     end
   end
 
