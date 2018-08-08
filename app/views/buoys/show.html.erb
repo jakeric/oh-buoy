@@ -1,14 +1,34 @@
-<h1>Buoys#Show</h1>
+<div class="container">
+  <div>
+  <%= cl_image_tag "vsixb78rasl46jol9nyv", height: 500, width: 500, crop: :fill %>
+  </div>
+</div>
 <br>
+<br>
+<div class="container">
 <p><%= @buoy.user.first_name %> <%= @buoy.user.last_name %></p>
-<h3><%= @buoy.title %></h3>
-<p><%= @buoy.description %></p>
-<h2><%= @buoy.price_per_day %>€</h2>
-<%= cl_image_tag @buoy.photo, height: 300, width: 400, crop: :fill %>
 
+  <div>
+    <h1><%= @buoy.title %></h1>
+  </div>
+  <div>
+    <p><%= @buoy.description %></p>
+  </div>
+  <div>
+    <h2><%= @buoy.price_per_day %>€</h2>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      <div><%= link_to 'Back to list',buoys_path %></div>
+    </div>
+    <div class="col-xs-2">
+      <div><%= link_to 'edit',edit_buoy_path(@buoy) %></div>
+    </div>
+    <div class="col-xs-2">
+      <div><%= link_to 'delete',buoy_path(@buoy), method: 'delete' %></div>
+    </div>
+  </div>
+</div>
 
-
-<%= link_to 'edit',edit_buoy_path(@buoy) %>
-<%= link_to 'delete',buoy_path(@buoy), method: 'delete' %>
-<br>
-<%= link_to 'Back to list',buoys_path %>
