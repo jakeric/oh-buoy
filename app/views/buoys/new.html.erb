@@ -1,13 +1,35 @@
-<h1>Buoys#New</h1>
 
-<%= simple_form_for @buoy do |f| %>
-  <%= f.select :category, @array, label: 'Category'%>
-  <%= f.input :title, label: 'Title' %>
-  <%= f.input :description, label: 'Description' %>
-  <%= f.input :age, label: 'Age' %>
-  <%= f.input :capacity, label: 'capacity' %>
-  <%= f.input :price_per_day, label: 'Price per day in €€€' %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.button :submit %>
-<% end %>
+<div class="split-flex">
+  <div class="split-leftbox">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Create a new buoy</h1>
+
+        <%= simple_form_for @buoy do |f| %>
+
+          <%= f.input :title, label: 'Title' %>
+          <%= f.input :description, label: 'Description' %>
+          <div class="col-md-6">
+            <div class="form-group">>
+            <%= f.select :category, @array, label: 'Category'%>
+            <%= f.input :age, label: 'How old is your buoy?' %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">>
+            <%= f.input :capacity, label: 'How many people fit on your buoy?' %>
+            <%= f.input :price_per_day, label: 'What does your buoy cost for one day?' %>
+            </div>
+          </div>
+          <%= f.input :street, label: 'Where does your buoy live?' %>
+          <%= f.input :photo, label: "Picture of your buoy"%>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="split-rightbox">
+    <%= cl_image_tag "vsixb78rasl46jol9nyv", height: 700, width: 500, crop: :fill %>
+  </div>
+</div>
