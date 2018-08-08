@@ -1,3 +1,73 @@
-.banner-content {
+.wrapper {
+
+}
+
+.banner {
   color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+  }
+}
+
+.banner-content {}
+.btn btn-primary btn-lg {}
+
+
+.container-page {
+  display:flex;
+  flex-direction: column;
+}
+
+.container-valueprop {
+  border: 1px solid black;
+  height: 400px;
+}
+
+.container-testimonials {
+  border: 1px solid black;
+  height: 400px;
+  margin-top: 20px;
+}
+.row-title-valueprop {
+  text-align: center;
+  border: 1px solid black;
+  margin: 15px 10px;
+}
+.row-valueprop {
+  border: 1px solid black;
+  padding: 10px 20px;
+
+}
+.valueprop {
+  text-align: center;
+  border: 1px solid black;
+  margin: 10px auto;
+  width: 200px;
+  height: 450px;
+}
+
+.row-title-testimonials {
+  border: 1px solid black;
+}
+.row-testimonials {
+  border: 1px solid black;
+}
+.testimonial {
+  border: 1px solid black;
 }
