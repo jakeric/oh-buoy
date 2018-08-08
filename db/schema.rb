@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_08_08_104815) do
-=======
+
 ActiveRecord::Schema.define(version: 2018_08_08_105939) do
->>>>>>> b3dd182e895f9ae6886fa1af63135052b3156cb6
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,12 +42,9 @@ ActiveRecord::Schema.define(version: 2018_08_08_105939) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-<<<<<<< HEAD
     t.string "photo"
-=======
     t.float "latitude"
     t.float "longitude"
->>>>>>> b3dd182e895f9ae6886fa1af63135052b3156cb6
     t.index ["user_id"], name: "index_buoys_on_user_id"
   end
 
