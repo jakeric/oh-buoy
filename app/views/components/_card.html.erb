@@ -1,0 +1,19 @@
+<div class="buoy-card">
+
+  <%= link_to buoy_path(buoy), html_options = { class: 'big-card-link' } do %>
+
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+      <div class="card-category">
+        <%= buoy.category %>
+      </div>
+    </div>
+
+    <div class="card-description">
+      <h2><%= buoy.title %></h2>
+      <p><%= buoy.city %></p>
+      <h3><%= buoy.price_per_day %>€ <span>per day</span></h3>
+    </div>
+
+  <% end %>
+
+</div>

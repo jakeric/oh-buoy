@@ -1,13 +1,22 @@
-<h1>Buoys#Index</h1>
+<div class="wrapper">
 
-<% @buoys.each do |buoy| %>
-<ul>
-  <li><%= buoy.title %></li>
-  <li><%= buoy.description %></li>
-  <li><%= buoy.price_per_day %></li>
-</ul>
-<%= link_to 'see details',buoy_path(buoy) %>
-<% end %>
+  <div class="container-search">
+    <!-- Add the search bar later, or the info searched (date, city) -->
+  </div>
 
-<br>
-<%= link_to 'Add a listing',new_buoy_path %>
+  <div class="container-card">
+
+    <div class="row card-title-row">
+      <h2> Check it out 👇</h2>
+    </div>
+
+    <div class="row card-row">
+      <% @buoys.each do |buoy| %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <%= render 'components/card', buoy: buoy %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

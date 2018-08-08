@@ -1,0 +1,64 @@
+.buoy-card {
+  margin: 20px auto;
+  height: 200px;
+
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgba(200,200,200,0.5);
+  transition: box-shadow 0.5s ease;
+  &:hover {
+  box-shadow: 8px 8px 13px rgba(200,200,200,0.8);
+  }
+}
+
+.card {
+  background-size: cover !important;
+  height : 140px;
+  position: relative;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.card-category {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: white !important;
+  font-size: 16px;
+}
+
+.card-description {
+  bottom: 0px;
+  height : 60px;
+  margin: 0px;
+  position: relative;
+  h2 {
+    font-size: 16px;
+    margin: 5px 5px;
+  }
+  p {
+    font-size: 12px;
+    margin: 0px 5px;
+  }
+  h3 {
+    position: absolute;
+    right : 5px;
+    bottom: 15px;
+    font-size: 16px;
+    margin: 0px 5px;
+    span {
+      font-size: 8px;
+    }
+  }
+}
+
+.big-card-link {
+  text-decoration: none !important;
+  color: $intense-pink;
+  &:hover {
+  text-decoration: none !important;
+  color: $intense-pink;
+  }
+  &:focus {
+  text-decoration: none !important;
+  color: $intense-pink;
+  }
+}
