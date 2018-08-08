@@ -21,8 +21,7 @@ class BuoysController < ApplicationController
     @buoy = Buoy.new(buoy_params)
     @buoy.user = current_user
     if @buoy.save
-      @buoy.save
-      redirect_to buoy_path(@buoy)
+      redirect_to buoys_path
     else
       render :new
     end
@@ -49,7 +48,7 @@ class BuoysController < ApplicationController
   end
 
   def buoy_params
-    params.require(:buoy).permit(:title, :age, :description, :capacity, :price_per_day, :category, :photo)
+    params.require(:buoy).permit(:title, :age, :description, :capacity, :price_per_day, :category, :photo, :street, :photo_cache)
   end
 
 end
