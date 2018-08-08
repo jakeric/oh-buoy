@@ -31,3 +31,5 @@ end
 
 gem 'devise'
 gem 'faker'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'

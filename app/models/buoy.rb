@@ -1,4 +1,5 @@
 class Buoy < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :reviews, through: :bookings
   has_many :photos
@@ -8,7 +9,6 @@ class Buoy < ApplicationRecord
   validates :category, presence: true, inclusion: { in: ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"] }
   validates :capacity, presence: true
   validates :price_per_day, numericality: true, presence: true
-end
+  validates :photo, presence:true
 
-# Test
-# Buoy.new(title: "Test title", age: 19, category: "Food", capacity: 3, price_per_day: 10.1)
+end
