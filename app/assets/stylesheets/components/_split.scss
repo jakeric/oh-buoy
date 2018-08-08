@@ -1,0 +1,23 @@
+.split-flex {
+  display: flex;
+  justify-content: center;
+  background: white;
+}
+
+.split-leftbox {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.split-rightbox > img {
+  float: right;
+}
+
+.split-flex-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+#buoy-category {
+    height: 39px !important;
+  }
