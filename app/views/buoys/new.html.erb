@@ -1,5 +1,5 @@
 
-<div class="split-flex">
+  <div class="split-flex">
   <div class="split-leftbox">
     <div class="row">
       <div class="col-md-12">
@@ -9,22 +9,39 @@
 
           <%= f.input :title, label: 'Title' %>
           <%= f.input :description, label: 'Description' %>
-          <div class="col-md-6">
-            <div class="form-group">>
-            <%= f.select :category, @array, label: 'Category'%>
-            <%= f.input :age, label: 'How old is your buoy?' %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :category, as: :select, collection: @array %>
+            </div>
+
+            <div class="col-md-6">
+              <%= f.input :age, label: 'How old is your buoy?' %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :capacity, label: 'How many people fit on your buoy?' %>
+            </div>
+
+            <div class="col-md-6">
+              <%= f.input :price_per_day, label: 'What does your buoy cost for one day?' %>
+            </div>
+
+            <div class="col-md-12">
+              <%= f.input :street, label: 'Where does your buoy live?' %>
+            </div>
+
+            <div class="col-md-12">
+              <div class="photo-input">
+                <%= f.input :photo %>
+                <button class="btn btn-success">upload a photo</button>
+              </div>
+            </div>
+
+            <%= f.input :photo_cache, as: :hidden %>
+
+            <div class="col-md-12">
+              <%= f.button :submit %>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">>
-            <%= f.input :capacity, label: 'How many people fit on your buoy?' %>
-            <%= f.input :price_per_day, label: 'What does your buoy cost for one day?' %>
-            </div>
-          </div>
-          <%= f.input :street, label: 'Where does your buoy live?' %>
-          <%= f.input :photo, label: "Picture of your buoy"%>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.button :submit %>
         <% end %>
       </div>
     </div>

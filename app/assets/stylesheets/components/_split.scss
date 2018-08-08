@@ -1,23 +1,47 @@
 .split-flex {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   background: white;
 }
 
 .split-leftbox {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 60px;
+  padding: 20px 20px;
 }
 
-.split-rightbox > img {
-  float: right;
+.split-rightbox {
+   margin-right: 80px;
+}
+.split-leftbox h1 {
+  color: #f9499e;
+  padding-bottom: 20px;
 }
 
-.split-flex-form {
-  display: flex;
-  justify-content: space-between;
+.btn {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #f9499e;
+  transition: background 0.3s ease;
 }
 
-#buoy-category {
-    height: 39px !important;
+.btn:hover {
+  opacity: 1;
+  background: #ed89b9;
+  text-decoration: none;
+  color: white;
+}
+
+input[type='file'] {
+  opacity: 0;
+}
+
+.photo-input {
+  position: relative;
+  > button {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
+}
