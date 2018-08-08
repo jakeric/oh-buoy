@@ -1,76 +1,91 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hompage</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="wrapper">
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
-      <div class="banner-content">
-        <h1>Oh Buoy!</h1>
-        <p>Find your buoys with us</p>
-        <a class="btn btn-primary btn-lg">Buoy me!</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oh Buoy!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <div class="banner background-image">
+        <div class="banner-content">
+          <h1>Oh Buoy!</h1>
+          <p>Find your holidays savior</p>
+          <%= link_to 'Rent an inflatable', buoys_path, class: 'btn btn-primary btn-lg' %>
+        </div>
       </div>
+
+      <div class="container-page">
+        <div class="container container-valueprop">
+
+          <div class="row row-title-valueprop">
+            <div class="col-xs-12">
+              <h1>Enjoy cheerful pool moments with friends and family</h1>
+            </div>
+          </div>
+
+          <div class="row row-valueprop">
+            <div class="col-xs-12 col-md-4">
+              <div class="valueprop">
+                <h1> Find the best inflatables</h1>
+                <p>Find anty kind of inflatable to rent for your holidays. We gather the world biggest catalog of inflatables.</p>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+              <div class="valueprop">
+                <h1> Do everything in one click</h1>
+                <p>Our plateform has been built to offer the best experience so you can easily find what you want and book it in 10 seconds, no you got more time to plan your trip.</p>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+              <div class="valueprop">
+                <h1> No hassle, we got you covered </h1>
+                <p>We know life is full of unexpeted surprise. We got you covered by Allianz insurance. If the party blows, keep going !</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container container-testimonials">
+          <div class="row row-title-testimonials">
+            <h1>What they think about our buoys</h1>
+          </div>
+          <div class="row row-testimonials">
+            <div class="col-xs-12 col-md-6">
+              <div class="testimonial">
+                <h1>Scarlett</h1>
+                <h2>has rented a wild colorful unicorn</h2>
+                <p>Oh my buoy is so cool.. shoot ! I rented out my unicorn Josy last month while I was in a bootcamp. Josy went to Cascais with Pedro,n they had a lot of fun and I made crazy money.</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <div class="testimonial">
+                <h1>Kaj</h1>
+                <h2>has rented 2 watermelon inflatables</h2>
+                <p>Really happy with this service, I rented two inflatables for my nieces, they had so much fun ! Thanks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="container">
-      <div class="row">
-        <h1>Who are we anyway?</h1>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-4">
-          <div class="valueprop">
-            <h1> Title 1 </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <div class="valueprop">
-            <h1> Title 2 </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <div class="valueprop">
-            <h1> Title 3 </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <h1>What they think about our buoys</h1>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <div class="testimonial">
-            <h1>Scarlett</h1>
-            <h2>has rented a wild colorful unicorn</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="testimonial">
-            <h1>Kaj</h1>
-            <h2>has rented a mad bike with two seats</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p><%= link_to 'Login', new_user_session_path %></p>
-  <p><%= link_to 'Sign Up', new_user_registration_path %></p>
-</div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-</body>
+
+    <!-- <p><%= link_to 'Login', new_user_session_path %></p>
+    <p><%= link_to 'Sign Up', new_user_registration_path %></p> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
