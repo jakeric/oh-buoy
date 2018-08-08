@@ -6,6 +6,10 @@ class BuoysController < ApplicationController
   end
 
   def show
+    # If we want to implement an average rating
+    # def mean(array)
+    # array.inject(array.inject(0) { |sum, x| sum += x } / array.size.to_f
+    # end
   end
 
   def new
