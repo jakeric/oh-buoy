@@ -8,13 +8,13 @@ class Buoy < ApplicationRecord
   validates :category, presence: true, inclusion: { in: ["Food", "Animal", "Unicorn", "Cartoon", "Classic", "Weird"] }
   validates :capacity, presence: true
   validates :price_per_day, numericality: true, presence: true
-  # validates :street
-  # validates :number
-  # validates :city
-  # validates :postal_code
-  # validates :country
-  # validates :latitude
-  # validates :longitude
+  validates :street
+  validates :number
+  validates :city
+  validates :postal_code
+  validates :country
+  validates :latitude
+  validates :longitude
 end
 
 # Test
