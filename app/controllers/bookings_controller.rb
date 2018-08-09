@@ -2,6 +2,10 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @buoy = Buoy.find(params[:buoy_id])
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def create
@@ -20,7 +24,12 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.destroy
+    if @booking.start_date < Date.today
+      @booking.destroy
+      redirect_to dashboard_path
+    else
+      redirect_to dashboard_path
+    end
   end
 
   private
