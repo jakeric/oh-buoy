@@ -1,0 +1,57 @@
+// Hero
+.container-buoy-show-hero {
+  border: 1px solid black;
+  height: 300px;
+}
+
+.buoy-show-hero-image {
+  background-size: cover !important;
+}
+
+
+
+//info + booking
+.container-buoy-show-info {
+  border: 1px solid black;
+  }
+
+.row-buoy-show-info {
+  border: 1px solid black;
+}
+
+.buoy-show-infos {
+  border: 1px solid black;
+  background-color: white;
+
+  height: 600px;
+}
+
+.buoy-show-infos-avatar-name {}
+.buoys-show-details {}
+.buoys-show-details-description {}
+
+
+.buoy-show-booking {
+  border: 1px solid black;
+  text-align: center;
+  height: 400px;
+  background-color: white;
+}
+.buoy-show-price {
+
+}
+.buoy-show-booking-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+
+
+
+// reviews
+.container-buoy-show-reviews {
+  border: 1px solid black;
+}
