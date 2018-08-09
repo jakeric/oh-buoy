@@ -1,4 +1,5 @@
 class Buoy < ApplicationRecord
+  searchkick
   mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :reviews, through: :bookings

@@ -2,7 +2,11 @@ class BuoysController < ApplicationController
   before_action :set_buoy, only: [:show, :edit, :update, :destroy]
 
   def index
-    @buoys = Buoy.all
+    if params[:query].present?
+      @buoys = Buoy.search("#{params[:query]}")
+    else
+      @buoys = Buoy.all
+    end
   end
 
   def show
