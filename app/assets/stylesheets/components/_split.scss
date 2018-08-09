@@ -1,22 +1,47 @@
-.split-flex {
-  display: flex;
+.wrapper {
+  background: white;
+  padding-bottom: 30px;
+}
+
+.wrapper h1 {
+  padding: 30px 0px;
+  color: #f9499e;
+  text-align: center;
+}
+.container-boxes {
   // justify-content: center;
   background: white;
+  margin-bottom: 20px;
 }
 
-.split-leftbox {
-  margin-left: 60px;
-  padding: 20px 20px;
+.left {
+  // margin-left: 130px;
+  // padding: 0px 20px;
+  // padding-top: 20px;
+  height: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.split-rightbox {
-   margin-right: 80px;
-}
-.split-leftbox h1 {
+.left h2 {
+  padding: 30px 0px;
   color: #f9499e;
-  padding-bottom: 20px;
+  text-align: left;
+  font-size: 18px;
 }
 
+.right {
+   // margin-right: 150px;
+   // height: 100%;
+   // width: 100%;
+   height: 500px;
+   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.form-control-label{
+  color: gray;
+  font-weight: normal;
+  font-size: 15px;
+}
 .btn {
   color: white;
   padding: 10px 15px;
@@ -24,6 +49,7 @@
   font-weight: bold;
   background: #f9499e;
   transition: background 0.3s ease;
+  margin-bottom: 30px;
 }
 
 .btn:hover {
@@ -38,10 +64,10 @@ input[type='file'] {
 }
 
 .photo-input {
-  position: relative;
-  > button {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  // position: relative;
+  // > button {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  // }
 }
