@@ -46,7 +46,7 @@
       <li><%= booking.buoy.description %></li>
       <li>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong> </li>
       <li><%= (booking.end_date - booking.start_date).denominator %> day(s)</li>
-      <li><%= ((booking.end_date - booking.start_date).denominator) * booking.buoy.price_per_day %> €</li>
+      <li><%= booking.total_price %> €</li>
       <%= link_to 'see the buoy\'s page', buoy_path(booking.buoy) %>
       <div><%= link_to 'cancel booking', buoy_booking_path(booking.buoy, booking), method: 'delete', :confirm => "Do you really want to cancel your booking?" %></div>
       </ul>
