@@ -10,12 +10,18 @@ class BookingsController < ApplicationController
 
   def create
     @buoy = Buoy.find(params[:buoy_id])
+
+    # calculating the renting days
+    days = (bookings_params["end_date"].to_date - bookings_params["start_date"].to_date).to_i
+    total_price = (days + 1) * @buoy.price_per_day
+
     @booking = Booking.new(bookings_params)
+    @booking.total_price = total_price
     @booking.buoy = @buoy
     @booking.user = current_user
     if @booking.save
       @booking.save!
-      redirect_to buoy_path(@buoy)
+      redirect_to dashboard_path
     else
       @booking = Booking.new
       render "buoys/show"
@@ -24,7 +30,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    if @booking.start_date < Date.today
+    if @booking.start_date <= Date.today
       @booking.destroy
       redirect_to dashboard_path
     else
