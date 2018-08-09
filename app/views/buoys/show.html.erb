@@ -1,40 +1,69 @@
-<div class="container">
-  <div>
-  <%= cl_image_tag @buoy.photo, height: 500, width: 500, crop: :fill %>
+<div class="wrapper-buoy-show">
+
+  <div class="container container-buoy-show-hero">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="buoy-show-hero-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('unicorn.jpg' ;">
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="container container-buoy-show-info">
+    <div class="row row-buoy-show-back">
+      <button><%= link_to 'Back to list', url_for(:back) %></button>
+    </div>
+    <div class="row row-buoy-show-info">
+      <div class="col-xs-12 col-md-8">
+        <div class="buoy-show-infos">
+          <p><%= @buoy.category %></p>
+          <h2><%= @buoy.title %></h2>
+          <div class="buoy-show-infos-avatar-name">
+            <!-- add avatar picture here -->
+           <p><%= @buoy.user.first_name %> <%= @buoy.user.last_name %></p>
+          </div>
+          <div class="buoys-show-details">
+            <span><i class="fas fa-clock"></i> <%= @buoy.age %>y/o</span>
+            <span><i class="fas fa-user-friends"></i> <%= @buoy.capacity %> ppl</span>
+          </div>
+          <div class="buoys-show-details-description">
+            <h4>Description</h4>
+            <p><%= @buoy.description %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="buoy-show-booking">
+          <div class="buoy-show-price">
+            <h1><%= @buoy.price_per_day.to_i %> <i class="fas fa-euro-sign"></i> <span>per day</span></h1>
+          </div>
+          <!-- add date picker once it is implemented -->
+          <div class="buoy-show-booking-links">
+            <!-- here is the logic to make buttons invisible to non logged users or not owner of listing -->
+            <% if user_signed_in? %>
+              <%= link_to 'Book', new_buoy_booking_path(@buoy), class: 'btn btn-primary' %>
+              <% else %>
+              <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="You need to log in first">
+                <button class='btn btn-primary' disabled>Book</button>
+              </span>
+            <% end %>
+            <% if current_user == @buoy.user %>
+              <%= link_to 'Edit',edit_buoy_path(@buoy), class: 'btn btn-danger' %>
+              <%= link_to 'delete',buoy_path(@buoy), method: 'delete', class: 'btn btn-danger' %></div>
+            <% end %>
+            <!-- end of buttons stuff -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container container-buoy-show-reviews">
+    <div class="buoy-show-reviews">
+      <h3>What people who rented this inflatable thinks...</h3>
+      <!-- add iteration over reviews once they are implemented -->
+    </div>
+  </div>
+
 </div>
-<br>
-<br>
-<div class="container">
-<p><%= @buoy.user.first_name %> <%= @buoy.user.last_name %></p>
-
-  <div>
-    <h1><%= @buoy.title %></h1>
-  </div>
-  <div>
-    <p><%= @buoy.description %></p>
-  </div>
-  <div>
-    <h2><%= @buoy.price_per_day %>€</h2>
-  </div>
-</div>
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-2">
-      <%= link_to 'Book this buoy', new_buoy_booking_path(@buoy) %>
-    </div>
-    <div class="col-xs-2">
-      <div><%= link_to 'Back to list',buoys_path %></div>
-    </div>
-    <div class="col-xs-2">
-      <div><%= link_to 'edit',edit_buoy_path(@buoy) %></div>
-    </div>
-    <div class="col-xs-2">
-      <div><%= link_to 'delete',buoy_path(@buoy), method: 'delete' %></div>
-    </div>
-  </div>
-</div>
-
