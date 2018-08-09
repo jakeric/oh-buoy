@@ -1,52 +1,55 @@
+<div class="wrapper">
 
-  <div class="split-flex">
-  <div class="split-leftbox">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Create a new buoy</h1>
+  <div class="container container-header">
+     <h1>Create a new buoy</h1>
+  </div>
 
-        <%= simple_form_for @buoy do |f| %>
-
-          <%= f.input :title, label: 'Title' %>
-          <%= f.input :description, label: 'Description' %>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :category, as: :select, collection: @array %>
-            </div>
-
-            <div class="col-md-6">
-              <%= f.input :age, label: 'How old is your buoy?' %>
-            </div>
-            <div class="col-md-6">
-              <%= f.input :capacity, label: 'How many people fit on your buoy?' %>
-            </div>
-
-            <div class="col-md-6">
-              <%= f.input :price_per_day, label: 'What does your buoy cost for one day?' %>
-            </div>
-
-            <div class="col-md-12">
-              <%= f.input :street, label: 'Where does your buoy live?' %>
-            </div>
-
-            <div class="col-md-12">
-              <div class="photo-input">
-                <%= f.input :photo %>
-                <%= f.input :photo_cache, as: :hidden %>
-                <!-- <button class="btn btn-success">upload a photo</button> -->
+  <div class="container container-boxes">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <%= simple_form_for @buoy do |f| %>
+                <%= f.input :title, label: 'Title' %>
+                <%= f.input :description, label: 'Description' %>
               </div>
-            </div>
+              <div class="col-md-6 col-xs-12">
+                <%= f.input :category, as: :select, collection: @array %>
+              </div>
 
-            <div class="col-md-12">
-              <%= f.button :submit %>
+              <div class="col-md-6 col-xs-12">
+                <%= f.input :age, label: 'How old is your buoy?' %>
+              </div>
+
+              <div class="col-md-6 col-xs-12">
+                <%= f.input :capacity, label: 'How many people fit on your buoy?' %>
+              </div>
+
+              <div class="col-md-6 col-xs-12">
+                <%= f.input :price_per_day, label: 'What does your buoy cost for one day?' %>
+              </div>
+
+              <div class="col-md-12 col-xs-12">
+                <%= f.input :street, label: 'Where does your buoy live?' %>
+              </div>
+
+              <div class="col-md-12">
+                <div class="photo-input">
+                  <%= f.input :photo %>
+                  <%= f.input :photo_cache, as: :hidden %>
+                  <%= f.button :submit %>
+                </div>
+              </div>
+              <% end %>
             </div>
           </div>
-        <% end %>
-        <%= link_to 'Back to buoys', buoys_path %>
+          <div class="col-xs-12 col-md-6">
+            <div class="right" style="background-image: url(flamingo.jpg);">
+            </div>
+          </div>
       </div>
-    </div>
-  </div>
-  <div class="split-rightbox">
-    <%= cl_image_tag "vsixb78rasl46jol9nyv", height: 700, width: 500, crop: :fill %>
+      <%= link_to 'Back to buoys', buoys_path %>
+
   </div>
 </div>
+
