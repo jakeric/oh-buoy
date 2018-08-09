@@ -1,0 +1,69 @@
+<h1>Dashboard</h1>
+<p>User : <%= current_user.first_name %> <%= current_user.last_name %> </p>
+
+
+<!-- <h3>Bookings</h3>
+<p>number of bookings: <%= current_user.bookings.size %></p>
+<% current_user.bookings.each do |booking| %>
+<ul>
+  <li><%= booking.buoy.title %></li>
+  <li><%= booking.buoy.description %></li>
+  <li>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong> </li>
+</ul>
+<% end %>
+
+<h3>Buoys listings</h3>
+<p>number of buoys: <%= current_user.buoys.size %></p>
+<% current_user.buoys.each do |buoy| %>
+<%= render 'components/card', buoy: buoy %>
+<% end %>
+
+<h3>Account informations</h3>
+<p>first name: <%= current_user.first_name %></p>
+<p>last name: <%= current_user.last_name %></p>
+<p>email :<%= current_user.email %></p>
+<p>payment info: <%= current_user.payment %></p>
+ -->
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My bookings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My listings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Account information</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active in" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <h3>Bookings</h3>
+    <p>number of bookings: <%= current_user.bookings.size %></p>
+    <% current_user.bookings.each do |booking| %>
+      <ul>
+      <li><%= booking.buoy.title %></li>
+      <li><%= booking.buoy.description %></li>
+      <li>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong> </li>
+      <li><%= (booking.end_date - booking.start_date).denominator %> day(s)</li>
+      <li><%= ((booking.end_date - booking.start_date).denominator) * booking.buoy.price_per_day %> €</li>
+      <%= link_to 'see the buoy\'s page', buoy_path(booking.buoy) %>
+      </ul>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <h3>Buoys listings</h3>
+    <p>number of buoys: <%= current_user.buoys.size %></p>
+    <% current_user.buoys.each do |buoy| %>
+      <%= render 'components/card', buoy: buoy %>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <h3>Account informations</h3>
+    <p>first name: <%= current_user.first_name %></p>
+    <p>last name: <%= current_user.last_name %></p>
+    <p>email :<%= current_user.email %></p>
+    <p>payment info: <%= current_user.payment %></p>
+    <%= link_to 'Edit infos', edit_user_registration_path %>
+  </div>
+</div>
