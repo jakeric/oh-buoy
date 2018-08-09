@@ -1,50 +1,100 @@
 // Hero
 .container-buoy-show-hero {
-  border: 1px solid black;
-  height: 300px;
+
 }
 
 .buoy-show-hero-image {
+  margin-top: 15px;
   background-size: cover !important;
+  height: 500px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 
 
 //info + booking
 .container-buoy-show-info {
-  border: 1px solid black;
+  position: relative;
+  padding-top: 0px;
   }
 
+.row-buoy-show-back {
+  position: absolute;
+  z-index: 1;
+  left: 45px;
+}
+
 .row-buoy-show-info {
-  border: 1px solid black;
+  padding: 10px;
+  margin-left: -1px;
+  margin-right: -1px;
+  background-color: white;
 }
 
 .buoy-show-infos {
-  border: 1px solid black;
   background-color: white;
-
-  height: 600px;
+  height: auto;
+  font-weight: bold;
+  p {
+  }
+  h2 {
+    margin-top: 10px;
+  }
 }
 
-.buoy-show-infos-avatar-name {}
-.buoys-show-details {}
-.buoys-show-details-description {}
+.buoy-show-infos-avatar-name {
+  font-weight: lighter;
+  span {
+    font-weight: bold;}
+}
+.buoys-show-details {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  span {
+    margin: 10px 10px 15px 0px;
+  }
+}
+.buoys-show-details-description {
+  h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+  }
+  p {
+    font-weight: lighter;
+  }
+}
 
 
 .buoy-show-booking {
-  border: 1px solid black;
   text-align: center;
-  height: 400px;
+  height: auto;
   background-color: white;
 }
 .buoy-show-price {
-
+  font-size: 20px;
+  h1 {
+    line-height: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 35px;
+  }
+  span {
+    font-size: 14px;
+    margin: 10px;
+  }
 }
 .buoy-show-booking-links {
+  height: 100px;
+  margin: 75px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  a {
+    margin: 5px;
+    width: 100px;
+  }
 
 }
 
@@ -53,5 +103,24 @@
 
 // reviews
 .container-buoy-show-reviews {
-  border: 1px solid black;
+  margin-bottom: 40px;
+}
+.row-buoy-show-reviews {
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+}
+.buoy-show-reviews {
+  height: auto;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 40px;
+  h3 {
+    font-size: 24px;
+    margin-top: 0px;
+  }
+  a {
+    margin-left: 10px;
+  }
 }
