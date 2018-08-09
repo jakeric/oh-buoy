@@ -32,7 +32,7 @@ class BuoysController < ApplicationController
   end
 
   def update
-    @buoy = Buoy.update(buoy_params)
+    @buoy.update(buoy_params)
     redirect_to buoy_path(@buoy)
   end
 
