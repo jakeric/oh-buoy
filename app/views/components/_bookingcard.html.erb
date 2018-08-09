@@ -1,0 +1,19 @@
+<div class="buoy-card">
+
+  <%= link_to buoy_path(booking.buoy), html_options = { class: 'big-card-link' } do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(' <%= cl_image_path(booking.buoy.photo) %> ') ;">
+
+      <div class="card-category">
+        <strong><%= booking.buoy.title %></strong> the <%= booking.buoy.category %>
+      </div>
+    </div>
+
+    <div class="card-description">
+      <p>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong> </p>
+      <h3> <%= booking.total_price %> EUR </h3>
+      <p><%= link_to 'cancel booking', buoy_booking_path(booking.buoy, booking), method: 'delete', :confirm => "Do you really want to cancel your booking?", style: "color: $gray;" %></p>
+    </div>
+
+  <% end %>
+
+</div>
