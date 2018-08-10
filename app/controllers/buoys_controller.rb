@@ -12,6 +12,17 @@ class BuoysController < ApplicationController
   def show
     @booking = Booking.new
     @user_not_logged = !user_signed_in?
+    date_range = []
+
+    @bookings = Booking.where("buoy_id = ?", params[:id])
+
+    @bookings.each do |booking|
+      date_range << {from: booking.start_date, to: booking.end_date}
+    end
+
+    @date_json = date_range.to_json
+
+
     # If we want to implement an average rating
     # def mean(array)
     # array.inject(array.inject(0) { |sum, x| sum += x } / array.size.to_f
