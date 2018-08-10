@@ -23,6 +23,7 @@
             <div class="buoy-show-infos-avatar-name">
               <!-- add avatar picture here -->
              <p>Rented by <span><%= @buoy.user.first_name %> <%= @buoy.user.last_name %></span></p>
+             <p> <i class="fas fa-map-marker"></i>  <%= @buoy.city %></p>
             </div>
             <div class="buoys-show-details">
               <span><i class="fas fa-clock"></i> <%= @buoy.age %> y/o</span>
@@ -39,19 +40,35 @@
             <div class="buoy-show-price">
               <h1><%= @buoy.price_per_day.to_i %> <i class="fas fa-euro-sign"></i> <br><span>per day</span></h1>
             </div>
+
             <!-- add date picker once it is implemented -->
+            <div class="buoy-show-datepicker" >
+              <%= simple_form_for [@buoy, @booking] do |f| %>
+              <div class="form-row">
+                <div class="col-xs-12 col-md-6">
+                  <%= f.input :start_date, as: :string, wrapper_html: { :class => "inline_field_wrapper" } %>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <%= f.input :end_date, as: :string, disabled: true, wrapper_html: { :class => "inline_field_wrapper" } %>
+                </div>
+
+                <div class="col-xs-12">
+                  <%= f.button :submit, :disabled => @user_not_logged, class: 'btn btn-primary' %>
+                </div>
+
+              </div>
+              <% end %>
+            </div>
+
+
             <div class="buoy-show-booking-links">
               <!-- here is the logic to make buttons invisible to non logged users or not owner of listing -->
-              <% if user_signed_in? %>
-                <%= link_to 'Book', new_buoy_booking_path(@buoy), class: 'btn btn-primary' %>
-                <% else %>
-                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="You need to log in first">
-                  <button class='btn btn-primary' disabled>Book</button>
-                </span>
-              <% end %>
               <% if current_user == @buoy.user %>
-                <%= link_to 'Edit',edit_buoy_path(@buoy), class: 'btn btn-danger' %>
-                <%= link_to 'delete',buoy_path(@buoy), method: 'delete', class: 'btn btn-danger' %></div>
+                <div class="buoy-show-owner-actions">
+                  <p>You are the owner of this buoy</p>
+                  <%= link_to 'Edit',edit_buoy_path(@buoy), class: 'btn btn-danger' %>
+                  <%= link_to 'delete',buoy_path(@buoy), method: 'delete', class: 'btn btn-danger' %></div>
+                </div>
               <% end %>
               <!-- end of buttons stuff -->
             </div>
@@ -66,13 +83,7 @@
           <h3>What people who rented this inflatable think...</h3>
           <!-- add iteration over reviews once they are implemented -->
             <p>...Well, actually, you will be the first to try it, go for it!
-            <% if user_signed_in? %>
-              <%= link_to 'Book', new_buoy_booking_path(@buoy), class: 'btn btn-primary' %>
-              <% else %>
-              <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="You need to log in first">
-                <button class='btn btn-primary' disabled>Book</button>
-              </span>
-            <% end %></p>
+            </p>
            <!-- iterate over reviews -->
         </div>
       </div>
