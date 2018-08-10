@@ -1,3 +1,40 @@
+// Back button
+.show-back-button {
+  color: $intense-pink !important;
+  background: none !important;
+  border: 1px solid $intense-pink !important;
+  font-size: 16px;
+  height: 35px;
+  width: 100px;
+  margin-top: 30px;
+  a {
+    text-decoration: none !important;
+    color: $intense-pink !important;
+    &:hover {
+      color: $light-pink !important;
+    }
+  }
+  &:hover {
+    text-decoration: none;
+    background: none !important;
+    border: 1px solid $light-pink !important;
+  }
+  &:focus {
+    outline-color: $intense-pink !important;
+    box-shadow: none !important;
+  }
+  &:active {
+    outline: 0 !important;
+    box-shadow: none;
+  }
+  &:active:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+
+
+
 // Hero
 .container-buoy-show-hero {
 
@@ -6,7 +43,8 @@
 .buoy-show-hero-image {
   margin-top: 15px;
   background-size: cover !important;
-  height: 500px;
+  background-position: center;
+  height: 600px;
   border-radius: 10px 10px 0px 0px;
 }
 

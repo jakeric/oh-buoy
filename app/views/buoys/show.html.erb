@@ -3,9 +3,13 @@
   <div class="big-box">
     <div class="container container-buoy-show-hero">
 
+      <button class="btn btn-outline-primary show-back-button">
+        <%= link_to 'Back', url_for(:back) %>
+      </button>
+
       <div class="row">
         <div class="col-xs-12">
-          <div class="buoy-show-hero-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(' <%= cl_image_path(@buoy.photo); %> ') ;">
+          <div class="buoy-show-hero-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(' <%= cl_image_path(@buoy.photo); %>') ;">
           </div>
         </div>
       </div>
