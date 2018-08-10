@@ -10,6 +10,8 @@ class BuoysController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @user_not_logged = !user_signed_in?
     # If we want to implement an average rating
     # def mean(array)
     # array.inject(array.inject(0) { |sum, x| sum += x } / array.size.to_f

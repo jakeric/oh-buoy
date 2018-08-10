@@ -67,9 +67,13 @@
 
 
 .buoy-show-booking {
+  height:450px !important;
   text-align: center;
   height: auto;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .buoy-show-price {
   font-size: 20px;
@@ -84,9 +88,15 @@
     margin: 10px;
   }
 }
+
+.buoy-show-datepicker {
+  text-align: center;
+
+}
+
 .buoy-show-booking-links {
   height: 100px;
-  margin: 75px auto;
+  // margin: 75px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,7 +105,22 @@
     margin: 5px;
     width: 100px;
   }
+}
 
+.buoy-show-owner-actions {
+  border: 1px dashed rgb(200,200,200);
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  p {
+    font-size: 12px;
+    color: rgb(200,200,200);
+  }
+  a {
+    width: 90px;
+    height: 35px;
+  }
 }
 
 
