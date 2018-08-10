@@ -25,7 +25,13 @@
 <p>payment info: <%= current_user.payment %></p>
 -->
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+
+
+
+
+
+<!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My bookings</a>
   </li>
@@ -67,4 +73,51 @@
   <p>payment info: <%= current_user.payment %></p>
   <%= link_to 'Edit infos', edit_user_registration_path %>
 </div>
+</div> -->
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <h3>Bookings</h3>
+    <p>number of bookings: <%= current_user.bookings.size %></p>
+    <div class="row card-row">
+      <% current_user.bookings.each do |booking| %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+         <%= render 'components/bookingcard', booking: booking %>
+       </div>
+     <% end %>
+    </div>
+  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <h3>Buoys listings</h3>
+    <p>number of buoys: <%= current_user.buoys.size %></p>
+    <div class="row card-row">
+      <% current_user.buoys.each do |buoy| %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <%= render 'components/card', buoy: buoy %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+    ...
+  </div>
+  <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+    ...
+  </div>
 </div>

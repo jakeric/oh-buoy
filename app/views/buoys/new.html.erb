@@ -1,12 +1,17 @@
+
+
 <div class="wrapper">
 
-  <div class="container container-header">
-     <h1>Create a new buoy</h1>
-  </div>
-
   <div class="container container-boxes">
+<<<<<<< HEAD
         <div class="row split-layout">
           <div class="col-xs-12 col-md-6">
+=======
+        <div class="row">
+          <div class="col-xs-12 col-md-6 left-form-container">
+            <h2> Create a new buoy </h2>
+
+>>>>>>> 1678ae41a5a855a6de1a43bf20225d73a851a5d9
             <div class="row">
               <div class="col-md-12">
                 <%= simple_form_for @buoy do |f| %>
@@ -33,21 +38,25 @@
                 <%= f.input :street, label: 'Where does your buoy live?' %>
               </div>
 
-              <div class="col-md-12">
+              <div class="col-md-12 padding-bottom-left">
                 <div class="photo-input">
                   <%= f.input :photo %>
                   <%= f.input :photo_cache, as: :hidden %>
                   <%= f.button :submit %>
                 </div>
+                      <%= link_to 'Back to buoys', buoys_path %>
+
               </div>
               <% end %>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6 split-layout-right"  style="background-image: url(<%= image_url "flamingo.jpeg" %>);">
+
+
+          <div class="col-xs-12 col-md-6 image-padding-delete">
+             <div class="right-form-container" style="background-image: url('<%= cl_image_path "vsixb78rasl46jol9nyv", crop: :fill %>');"></div>
+
           </div>
       </div>
-      <%= link_to 'Back to buoys', buoys_path %>
 
   </div>
 </div>
-
