@@ -31,6 +31,16 @@
   }
 }
 
+.access-button a {
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+  &:active {
+    text-decoration: none !important;
+  }
+}
+
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;

@@ -1,123 +1,69 @@
-<h1>Dashboard</h1>
-<p>User : <%= current_user.first_name %> <%= current_user.last_name %> </p>
+<div class="wrapper">
+
+  <button class="btn btn-outline-primary show-back-button back-dashboard">
+    <%= link_to 'Back', url_for(:back) %>
+  </button>
+
+  <div class="container">
+    <div class="header">
+      <h1>Dashboard</h1>
+      <p>👋 Hello <%= current_user.first_name %> <%= current_user.last_name %>!</p>
+    </div>
 
 
-<!-- <h3>Bookings</h3>
-<p>number of bookings: <%= current_user.bookings.size %></p>
-<% current_user.bookings.each do |booking| %>
-<ul>
-  <li><%= booking.buoy.title %></li>
-  <li><%= booking.buoy.description %></li>
-  <li>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong> </li>
-</ul>
-<% end %>
-
-<h3>Buoys listings</h3>
-<p>number of buoys: <%= current_user.buoys.size %></p>
-<% current_user.buoys.each do |buoy| %>
-<%= render 'components/card', buoy: buoy %>
-<% end %>
-
-<h3>Account informations</h3>
-<p>first name: <%= current_user.first_name %></p>
-<p>last name: <%= current_user.last_name %></p>
-<p>email :<%= current_user.email %></p>
-<p>payment info: <%= current_user.payment %></p>
--->
+    <div class="dashboard-infos-tabs">
 
 
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item active">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Manage bookings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Manage listings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Manage account information</a>
+      </li>
+    </ul>
 
-
-
-
-
-<!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My bookings</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My listings</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Account information</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active in" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <h3>Bookings</h3>
-    <p>number of bookings: <%= current_user.bookings.size %></p>
-    <div class="row card-row">
-      <% current_user.bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-4 col-md-3">
-       <%= render 'components/bookingcard', booking: booking %>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h3>Bookings</h3>
+        <p>number of bookings: <%= current_user.bookings.size %></p>
+        <div class="row card-row">
+        <% current_user.bookings.each do |booking| %>
+          <div class="col-xs-12 col-sm-4 col-md-3">
+            <%= render 'components/bookingcard', booking: booking %>
+          </div>
+        <% end %>
+      </div>
      </div>
-     <% end %>
-   </div>
- </div>
- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-  <h3>Buoys listings</h3>
-  <p>number of buoys: <%= current_user.buoys.size %></p>
-  <div class="row card-row">
-    <% current_user.buoys.each do |buoy| %>
-    <div class="col-xs-12 col-sm-4 col-md-3">
-      <%= render 'components/card', buoy: buoy %>
-    </div>
-    <% end %>
-  </div>
-</div>
-<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-  <h3>Account informations</h3>
-  <p>first name: <%= current_user.first_name %></p>
-  <p>last name: <%= current_user.last_name %></p>
-  <p>email :<%= current_user.email %></p>
-  <p>payment info: <%= current_user.payment %></p>
-  <%= link_to 'Edit infos', edit_user_registration_path %>
-</div>
-</div> -->
-
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-  </li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <h3>Bookings</h3>
-    <p>number of bookings: <%= current_user.bookings.size %></p>
-    <div class="row card-row">
-      <% current_user.bookings.each do |booking| %>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-         <%= render 'components/bookingcard', booking: booking %>
-       </div>
-     <% end %>
-    </div>
-  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <h3>Buoys listings</h3>
-    <p>number of buoys: <%= current_user.buoys.size %></p>
-    <div class="row card-row">
-      <% current_user.buoys.each do |buoy| %>
+     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <h3>Buoys listings</h3>
+      <p>number of buoys: <%= current_user.buoys.size %></p>
+      <div class="row card-row">
+        <% current_user.buoys.each do |buoy| %>
         <div class="col-xs-12 col-sm-4 col-md-3">
           <%= render 'components/card', buoy: buoy %>
         </div>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <h3>Account informations</h3>
+      <p>first name: <%= current_user.first_name %></p>
+      <p>last name: <%= current_user.last_name %></p>
+      <p>email: <%= current_user.email %></p>
+      <p>payment info: <%= current_user.payment %></p>
+      <%= link_to 'Edit infos', edit_user_registration_path, class: 'btn btn-primary'%>
+    </div>
+    </div>
+
+
+
+
+
     </div>
   </div>
-  <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-    ...
-  </div>
-  <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-    ...
-  </div>
+
 </div>
