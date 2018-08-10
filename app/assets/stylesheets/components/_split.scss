@@ -76,3 +76,12 @@
   //   left: 0;
   // }
 // }
+
+.split-layout {
+  height: 90vh;
+  &-right {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}

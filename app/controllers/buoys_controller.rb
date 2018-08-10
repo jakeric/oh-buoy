@@ -4,6 +4,10 @@ class BuoysController < ApplicationController
   def index
     if params[:query].present?
       @buoys = Buoy.search("#{params[:query]}")
+      if @buoys.empty?
+        @error_message = "No search result found"
+        @buoys = Buoy.all
+      end
     else
       @buoys = Buoy.all
     end

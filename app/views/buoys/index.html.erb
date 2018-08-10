@@ -14,7 +14,9 @@
 </div>
 
   <div class="container-card">
-
+    <% if @error_message == "No search result found" %>
+      <p> <%= @error_message %></p>
+    <% end %>
     <div class="row card-title-row">
       <h2> Check it out 👇</h2>
     </div>
@@ -30,3 +32,7 @@
 
   </div>
 </div>
+
+
+
+
