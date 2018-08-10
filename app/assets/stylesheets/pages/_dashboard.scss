@@ -1,1 +1,48 @@
+.wrapper {
+  min-height: 80vh;
+}
+
+.back-dashboard {
+  margin-left: 130px;
+  margin-bottom: 50px;
+}
+
+#home-tab {
+  color: $intense-pink;
+  &:active {
+    color: $intense-pink;
+  }
+  &:hover {
+    color: $intense-pink;
+  }
+}
+#profile-tab {
+  color: $intense-pink;
+  &:active {
+    color: $intense-pink;
+  }
+  &:hover {
+    color: $intense-pink;
+  }
+}
+#contact-tab {
+  color: $intense-pink;
+  &:active {
+    color: $intense-pink;
+  }
+  &:hover {
+    color: $intense-pink;
+  }
+}
+
+#myTabContent {
+}
+
+#home {
+}
+#profile {
+}
+#contact {
+}
+
 

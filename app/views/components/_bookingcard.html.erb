@@ -11,7 +11,7 @@
     <div class="card-description">
       <p>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong> </p>
       <h3> <%= booking.total_price %> EUR </h3>
-      <p><%= link_to 'cancel booking', buoy_booking_path(booking.buoy, booking), method: 'delete', :confirm => "Do you really want to cancel your booking?", style: "color: $gray;" %></p>
+      <p><%= link_to 'cancel booking', buoy_booking_path(booking.buoy, booking), method: 'delete', :confirm => "Do you really want to cancel your booking?", style: "color: white; background: red; border-radius: 3px;" %></p>
     </div>
 
   <% end %>
