@@ -47,25 +47,26 @@
               <h1><%= @buoy.price_per_day.to_i %> <i class="fas fa-euro-sign"></i> <br><span>per day</span></h1>
             </div>
 
-            <!-- add date picker once it is implemented -->
+            <!-- date picker -->
             <div class="buoy-show-datepicker" disable-dates= " <%= @date_json %> " >
 
-              <%= simple_form_for [@buoy, @booking] do |f| %>
-              <div class="form-row">
-                <div class="col-xs-12 col-md-6">
-                  <%= f.input :start_date, as: :string, wrapper_html: { :class => "inline_field_wrapper" } %>
-                  <%= f.input :end_date, as: :hidden, wrapper_html: { :class => "inline_field_wrapper" } %>
-                </div>
-                </div>
-                <!-- <div class="col-xs-12 col-md-6">
+              <div class="col-xs-12">
+                <%= simple_form_for [@buoy, @booking] do |f| %>
+                <div class="form-row">
+                  <div class="datepicker-field">
+                    <div>
+                    <%= f.input :start_date, as: :string, wrapper_html: { :class => "inline_field_wrapper" }, label: 'Select dates'%>
+                    <%= f.input :end_date, as: :hidden, wrapper_html: { :class => "inline_field_wrapper" } %>
+                    </div>
 
-                </div>-->
-                <div class="col-xs-12">
-                  <%= f.button :submit, :disabled => @user_not_logged, class: 'btn btn-primary' %>
+                    <div class="datepicker-submit">
+                    <%= f.button :submit, :disabled => @user_not_logged, class: 'btn btn-primary' %>
+                    </div>
+                  </div>
                 </div>
-
+                <% end %>
               </div>
-              <% end %>
+
             </div>
 
 
